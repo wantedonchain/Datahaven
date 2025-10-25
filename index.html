@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATAHAVEN Quiz - Auto Reset</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Username Screen -->
+        <div id="usernameScreen" class="screen active">
+            <div class="logo">
+                <div class="logo-container">
+                    <img src="https://pbs.twimg.com/profile_images/1883674775190388736/9YuEYF8-_400x400.jpg" alt="DATAHAVEN Logo" class="quiz-logo">
+                </div>
+                <h1>🎯 DATAHAVEN QUIZ</h1>
+                <p>Auto-resets every 2 hours • 100 XP per correct answer</p>
+            </div>
+            <div class="username-form">
+                <h2>Enter Your Username</h2>
+                <input type="text" id="usernameInput" placeholder="Enter your username..." maxlength="20">
+                <div id="usernameError" class="error-message"></div>
+                <button id="joinBtn" class="btn-primary">Start Quiz</button>
+                <div class="player-count">
+                    <span id="currentPlayers">0</span> Active Players
+                </div>
+                <div class="reset-timer">
+                    🔄 Username resets in: <span id="resetTimer">02:00:00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="screen">
+            <div class="quiz-header">
+                <div class="player-info">Player: <span id="quizUsername">User</span></div>
+                <div class="progress">Question <span id="currentQuestion">1</span>/25</div>
+                <div class="score">Score: <span id="currentScore">0</span> XP</div>
+                <div class="timer">
+                    <div class="timer-bar">
+                        <div class="timer-progress" id="timerProgress"></div>
+                    </div>
+                    <span id="timeLeft">20s</span>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <h2 id="questionText">Question will appear here</h2>
+                <div id="optionsContainer" class="options-container">
+                    <button class="option-btn">Option A</button>
+                    <button class="option-btn">Option B</button>
+                    <button class="option-btn">Option C</button>
+                    <button class="option-btn">Option D</button>
+                </div>
+            </div>
+
+            <div class="feedback" id="feedback">Feedback will appear here</div>
+        </div>
+
+        <!-- Leaderboard Screen -->
+        <div id="leaderboardScreen" class="screen">
+            <div class="leaderboard-content">
+                <h2>🏆 LEADERBOARD</h2>
+                <p class="xp-rate">1 Correct Answer = 100 XP</p>
+                <div id="leaderboard" class="leaderboard">
+                    <div class="leaderboard-item">
+                        <div class="rank">#1</div>
+                        <div class="player-name">Player1</div>
+                        <div class="player-score">500 XP</div>
+                    </div>
+                </div>
+                <button id="playAgainBtn" class="btn-primary">Play Again</button>
+                <div class="reset-info">
+                    🔄 Usernames reset every 2 hours
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
